@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "codeSignal-Rust"
+name = "codesignal-rust"
 version = "0.1.0"
