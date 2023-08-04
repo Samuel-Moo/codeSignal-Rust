@@ -49,6 +49,19 @@ fn shapeArea(n: i32) -> i32 {
     n.pow(2) + (n-1).pow(2) 
 }
 
+fn MakeArrayConsecutive2(statues: Vec<i32>) -> i32 {
+    let mut newStat: Vec<i32> = statues.clone();
+    newStat.sort();
+    let mut solved: i32 = 0;
+    for i in 0..newStat.len() - 1 {
+        if newStat[i + 1] - newStat[i] > 1 {
+            solved += newStat[i + 1] - newStat[i] - 1; 
+        }
+    }
+    solved
+}
+
+
 fn main() {
     //Execute Stuff
     let function_to_test = century_from_year(1898); 
