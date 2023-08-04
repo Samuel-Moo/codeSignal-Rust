@@ -16,6 +16,39 @@ fn century_from_year(year: i32) -> i32 {
     
 }
 
+fn checkPalindrome(inputString: String) -> bool {
+    let newString: String = inputString.chars().rev().collect();
+    
+    let mut res: bool = true;
+    
+    if newString != inputString {
+        res = false
+    } 
+    
+    res
+    
+}
+
+fn adjacentElementsProduct(inputArray: Vec<i32>) -> i32 {
+
+    let mut largest = i32::MIN;
+
+    for i in 0..inputArray.len() - 1 {
+        
+        let mut memo = inputArray[i] * inputArray[i + 1];
+        
+        if memo > largest {
+            largest = memo;
+        }
+    }
+    
+    largest
+}
+
+fn shapeArea(n: i32) -> i32 {
+    n.pow(2) + (n-1).pow(2) 
+}
+
 fn main() {
     //Execute Stuff
     let function_to_test = century_from_year(1898); 
