@@ -62,6 +62,28 @@ fn MakeArrayConsecutive2(statues: Vec<i32>) -> i32 {
 }
 
 
+fn matrixElementsSum(matrix: Vec<Vec<i32>>) -> i32 {
+    let mut total_sum: i32 = 0;
+    for (row_id, row) in matrix.iter().enumerate() {
+        for (element_id, &(mut element)) in row.iter().enumerate() {
+            if row_id > 0 && matrix[row_id - 1][element_id] == 0 {
+                element = 0;
+            }
+                        if row_id > 1 && matrix[row_id - 2][element_id] == 0 {
+                element = 0;
+            }
+                        if row_id > 2 && matrix[row_id - 3][element_id] == 0 {
+                element = 0;
+            }
+            if element != 0 {
+                total_sum += element;
+            }  
+        }
+    } 
+    total_sum
+}
+
+
 fn main() {
     //Execute Stuff
     let function_to_test = century_from_year(1898); 
